@@ -1,0 +1,121 @@
+body {
+	/*background: rgba(192, 192, 192, .7);*/
+}
+.container .jumbotron {
+	background: #FFF9A0;
+	box-shadow: 8px 8px 10px;
+	border-radius: 0;
+}
+.navbar-default{
+	background: rgba(192, 192, 192, 0);
+	border-color: rgba(192, 192, 192, 0);
+}
+
+.navbar-brand {
+	margin-right: 20px;
+}
+
+.navbar-brand:hover{
+	text-decoration: underline;
+	font-size: 1.6em;
+}
+
+.navbar-default .navbar-brand {
+	font-size: 1.4em;
+	color: black;
+}	
+
+.tasks-list {
+	background: #FFF9A0;
+	padding: 10px;
+}
+.task {
+	padding-left: 5px;
+}
+
+.task:not(:last-child) {
+	border-bottom: 1.5px dashed #23527C;
+}
+
+.titleText {
+	font-family: 'Syncopate', sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.bodyText {
+	font-family: 'Alegreya Sans', sans-serif;
+	font-size: 1.4em;
+}
+.tasks-link h1 {
+	font-family: 'Syncopate', sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+}
+
+.task-board {
+	box-shadow: 8px 8px 10px;
+}
+
+.tasks-header {
+	background: #FFF9A0;
+	border-bottom: 2px solid #E74430;
+	padding-left: 5px;
+}
+
+.task-title a {
+	margin-bottom: 0;
+	color: #3fb0ac;
+}
+
+.task-title a:hover {
+	font-size: 1.2em;
+}
+
+.taskBody p {
+	padding-left: 10px;
+	font-family: 'Alegreya Sans', sans-serif;
+	font-size: 1.2em;
+}
+
+.glyphicon-plus {
+	color: #3fb0ac;
+	margin-left: 10px;
+}
+
+.glypicon-plus:hover {
+	text-decoration: none;
+}
+
+.buttons {
+	margin: 15px 0;
+}
+
+.btn {
+	margin-right: 5px;
+}
+
+.addTask h3 {
+	font-family: 'Alegreya Sans', sans-serif;
+}
+
+.form label{
+	font-size: 1.2em;
+}
+
+.form input[type=text]{
+	background: #FFF9AA;
+	border-radius: 0;
+	color: black;
+	font-family: 'Alegreya Sans', sans-serif;
+	font-size: 1.4em;
+}
+
+.form-group #body{
+	border-radius: 0;
+	background: #FFF9AA;
+	color: black;
+	font-family: 'Alegreya Sans', sans-serif;
+	font-size: 1.4em;
+}
