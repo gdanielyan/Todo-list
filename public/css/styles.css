@@ -1,34 +1,44 @@
-body {
-	/*background: rgba(192, 192, 192, .7);*/
-}
-.container .jumbotron {
-	background: #FFF9A0;
-	box-shadow: 8px 8px 10px;
-	border-radius: 0;
+	html, body{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#87e0fd+0,53cbf1+40,05abe0+100;Blue+3D+%23+16 */
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#648eb7+0,035170+100 */
+	background: rgb(100,142,183); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(100,142,183,1) 0%, rgba(3,81,112,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(100,142,183,1) 0%,rgba(3,81,112,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(100,142,183,1) 0%,rgba(3,81,112,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#648eb7', endColorstr='#035170',GradientType=0 ); /* IE6-9 */
+
+	background-repeat: no-repeat;
+	height: 100%;
 }
 .navbar-default{
 	background: rgba(192, 192, 192, 0);
 	border-color: rgba(192, 192, 192, 0);
 }
 
-.navbar-brand {
-	margin-right: 20px;
-}
-
-.navbar-brand:hover{
-	text-decoration: underline;
-	font-size: 1.6em;
-}
-
 .navbar-default .navbar-brand {
-	font-size: 1.4em;
-	color: black;
-}	
+    color: #efefef;
+    font-size: 1.2em;
+}
 
-.tasks-list {
-	background: #FFF9A0;
+.navbar-default .navbar-brand:hover {
+	color: #efefef;
+	font-size: 1.5em;
+}
+
+.navbar-brand {
+	margin-right: 25px;
+}
+
+.notepad-yellow {
+	background: #fae596;  
+	/* #FFF9A0; */
 	padding: 10px;
 }
+
+#task-list {
+	padding: 10px;
+}
+
 .task {
 	padding-left: 5px;
 }
@@ -54,12 +64,8 @@ body {
 	text-align: center;
 }
 
-.task-board {
-	box-shadow: 8px 8px 10px;
-}
-
 .tasks-header {
-	background: #FFF9A0;
+	background: #fae596;  /* #FFF9A0; */
 	border-bottom: 2px solid #E74430;
 	padding-left: 5px;
 }
@@ -70,9 +76,12 @@ body {
 }
 
 .task-title a:hover {
-	font-size: 1.2em;
+	font-size: 1.0em;
 }
 
+.box-shadow {
+	box-shadow: 8px 8px 10px;
+}
 .taskBody p {
 	padding-left: 10px;
 	font-family: 'Alegreya Sans', sans-serif;
@@ -119,3 +128,26 @@ body {
 	font-family: 'Alegreya Sans', sans-serif;
 	font-size: 1.4em;
 }
+
+.mylist-img {
+	background-image: url("list.png");
+	background-repeat: no-repeat;
+	height: 300px;
+	
+}
+
+
+@media screen and (max-width: 600px) {
+
+/*	.navbar-default .navbar-brand {
+	    color: #efefef;
+	    font-size: 3.8em;
+	}
+
+	.navbar-default .navbar-brand:hover {
+		color: #efefef;
+		 font-size: 3.8em;
+	}
+*/
+}
+

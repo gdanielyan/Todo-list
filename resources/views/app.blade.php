@@ -29,22 +29,22 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 	
-					<a class="navbar-brand" href="{{ url('home')}}">Home</a>
+					<a class="navbar-brand" href="{{ url('home')}}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a>
 					@if(Auth::guest())
-						<a class="navbar-brand" href="{{ url('/auth/login') }}">Sign in</a>
+						<a class="navbar-brand" href="{{ url('/auth/login') }}"><span class="glyphicon glyphicon-log-in"></span> Sign in</a>
 					@else
-						<a class="navbar-brand" href="{{ url('') }}">Tasks</a>
+						<a class="navbar-brand" href="{{ action('TasksController@index') }}"><span class="glyphicon glyphicon-th-list"></span> Tasks</a>
 					@endif
 					@if (Auth::guest())
-						<a class="navbar-brand" href="{{ url('/auth/register') }}">Register</a>
+						<a class="navbar-brand" href="{{ url('/auth/register') }}"><span class="glyphicon glyphicon-user"></span> Register</a>
 					@else 
-						<a class="navbar-brand" href="{{ url('/auth/logout') }}">Sign out</a>
+						<a class="navbar-brand" href="{{ url('/auth/logout') }}"><span class="glyphicon glyphicon-log-out"></span> Sign out</a>
 					@endif
 			</div>
 		</div>
 	</nav>
 
-	<div class="container center-block">
+	<div class="container">
 		@yield('content')
 	</div>
 

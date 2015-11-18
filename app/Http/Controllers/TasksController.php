@@ -5,6 +5,7 @@ use App\Http\Requests\TaskRequest;
 use App\Http\Controllers\Controller;
 use App\Task;
 use App\User;
+use Auth;
 
 use Request;
 
@@ -16,15 +17,19 @@ class TasksController extends Controller {
 	 * @return Response
 	 */
 
-	public function __construct() {
-		$this->middleware('auth', ['except' => 'goLogin']);
+	public function __construct() 
+	{
+		$this->middleware('auth');
 	}
 
 	public function index()
 	{
-		$user = \Auth::User();
+		$user = Auth::User();
+
 		$tasks = Task::where('user_id', $user->id)->get()->sortByDesc('updated_at');
-		$authorized = \Auth::check();
+
+		$authorized = Auth::check();
+
 		return view('tasks.index', compact('tasks', 'authorized'));
 	}
 
@@ -45,9 +50,10 @@ class TasksController extends Controller {
 	 */
 	public function store(TaskRequest $request)
 	{
-		//Task::create($input);
 		$taskNew = new Task($request->all());
-		\Auth::user()->tasks()->save($taskNew);
+
+		Auth::user()->tasks()->save($taskNew);
+
 		return redirect('tasks');
 	}
 
@@ -59,9 +65,11 @@ class TasksController extends Controller {
 	 */
 	public function show($id)
 	{
-		$task = Task::find($id);
-		if(\Auth::user()->id == $task['user_id']){
+		$task = Task::findOrFail($id);
+
+		if(Auth::user()->id == $task['user_id']){
 			return view('tasks.show', compact('task'));
+
 		}else {
 			return redirect('tasks');
 		}
@@ -77,8 +85,9 @@ class TasksController extends Controller {
 	{
 		$task = Task::findOrFail($id);
 
-		if(\Auth::user()->id == $task['user_id']){
+		if(Auth::user()->id == $task['user_id']){
 			return view('tasks.edit', compact('task'));
+
 		}else {
 			return redirect('tasks');
 		}
@@ -94,9 +103,10 @@ class TasksController extends Controller {
 	{
 
 		$task = Task::findOrFail($id);
-		$task->update($request->all());
-		return redirect('tasks');
 
+		$task->update($request->all());
+
+		return redirect('tasks');
 	}
 
 	/**
@@ -108,12 +118,10 @@ class TasksController extends Controller {
 	public function destroy($id)
 	{	
 		$task = Task::find($id);
-		$task->delete();
-		return redirect('tasks');
-	}
 
-	public function goLogin() {
-		return redirect('auth.login');
+		$task->delete();
+
+		return redirect('tasks');
 	}
 
 }

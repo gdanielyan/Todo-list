@@ -3,13 +3,13 @@
 @section('content')
 	@if($authorized)
 		<div class="row" id="list">
-			<div class="col-sm-8 col-xs-10 inner-content col-sm-offset-2 col-xs-offset-1 task-board">
+			<div class="col-sm-8 col-xs-10 inner-content col-sm-offset-2 col-xs-offset-1 box-shadow">
 				<div class="row tasks-header">
 					<div class="tasks-link">
 						<h1>Task List</h1>
 					</div>
 				</div>
-				<div class="row tasks-list">
+				<div class="row notepad-yellow" id="task-list">
 					@foreach ($tasks as $task)
 						<div class="task">
 							<div class="pull-left">
@@ -34,8 +34,7 @@
 						</div>
 					@endforeach
 					<div class="addTask">
-						<h3>Add a new task<a href="{{ action('TasksController@create') }}" data-toggle="tooltip" title="Add a task!">
-						<span class="glyphicon glyphicon-plus"></span></a></h3>
+						<h3>Add a new task<a href="{{ action('TasksController@create') }}" data-toggle="tooltip" title="Add a task!"><span class="glyphicon glyphicon-plus"></span></a></h3>
 					</div>
 				</div>
 			</div>

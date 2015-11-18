@@ -12,12 +12,15 @@
 */
  
 Route::resource('tasks', 'TasksController');
-Route::get('/', 'TasksController@index');
+Route::get('/', 'HomeController@index');
 Route::get('index', 'TasksController@index');
-Route::get('goLogin', 'TasksController@goLogin');
 Route::get('home', 'HomeController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+// Password reset routes...
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');
